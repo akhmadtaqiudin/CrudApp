@@ -47,7 +47,7 @@ public class PersonController {
 
         Map<String, Object> m = new HashMap<String, Object>();
         m.put("Success", Boolean.TRUE);
-        m.put("Info", "Data Tersimpan");
+        m.put("Info", "Data TerUbah");
         return m;
     }
 	
@@ -58,7 +58,7 @@ public class PersonController {
 
         Map<String, Object> m = new HashMap<String, Object>();
         m.put("Success", Boolean.TRUE);
-        m.put("Info", "Data Tersimpan");
+        m.put("Info", "Data TerHapus");
         return m;
     }
 }
