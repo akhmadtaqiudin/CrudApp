@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,7 @@ import com.id.taqi.services.PersonService;
 public class PersonController {
 
 	@Autowired
-	PersonService personService;
+	private PersonService personService;
 	
 	@ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/person", method = RequestMethod.GET)
@@ -30,7 +31,7 @@ public class PersonController {
     }
 	
 	@ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(value = "/person", method = RequestMethod.POST)
+    @RequestMapping(value = "/person", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE}, consumes = {MediaType.APPLICATION_JSON_VALUE})
     public Map<String, Object> savePerson(@RequestBody Person p) {
 		personService.saveOrUpdate(p);
 
