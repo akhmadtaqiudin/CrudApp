@@ -1,0 +1,2 @@
+# CrudApp
+Generic dao hibernate
